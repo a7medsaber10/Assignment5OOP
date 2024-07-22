@@ -56,7 +56,7 @@ namespace Demo.Operator_Overloading
         #endregion
 
         #region Relational Operators
-        public static bool operator >(Complex left , Complex right)
+        public static bool operator >(Complex left, Complex right)
         {
             return ((left?.Real == right?.Real) && (left?.Imag > right?.Imag)) || (left?.Real > right?.Real);
             //if (left.Real == right.Real)
@@ -81,6 +81,18 @@ namespace Demo.Operator_Overloading
             //{
             //    return left.Real < right.Real;
             //}
+        }
+        #endregion
+
+        #region Casting operator
+        public static /*int*/ explicit operator int(Complex complex)
+        {
+            return complex?.Real ?? 0;
+        }
+
+        public static /*string*/ implicit operator string(Complex complex)
+        {
+            return complex?.ToString() ?? string.Empty;
         }
         #endregion
     }
