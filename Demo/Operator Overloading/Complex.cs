@@ -54,5 +54,34 @@ namespace Demo.Operator_Overloading
             };
         }
         #endregion
+
+        #region Relational Operators
+        public static bool operator >(Complex left , Complex right)
+        {
+            return ((left?.Real == right?.Real) && (left?.Imag > right?.Imag)) || (left?.Real > right?.Real);
+            //if (left.Real == right.Real)
+            //{
+            //    return left.Imag > right.Imag;
+            //}
+            //else
+            //{
+            //    return left.Real > right.Real;
+            //}
+        }
+
+        public static bool operator <(Complex left, Complex right)
+        {
+
+            return ((left?.Real == right?.Real) && (left?.Imag < right?.Imag)) || (left?.Real < right?.Real);
+            //if (left.Real == right.Real)
+            //{
+            //    return left.Imag < right.Imag;
+            //}
+            //else
+            //{
+            //    return left.Real < right.Real;
+            //}
+        }
+        #endregion
     }
 }

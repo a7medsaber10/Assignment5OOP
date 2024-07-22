@@ -10,6 +10,21 @@ namespace Demo
             Complex C2 = new Complex() { Real = 1, Imag = 2 };
 
             Complex C3 = C1 + C2;
+
+            C1++;
+
+            if (C1 > C2) 
+            {
+                Console.WriteLine("C1 is greater");
+            }
+            else if (C1 < C2)
+            {
+                Console.WriteLine("C2 is greater");
+            }
+            else
+            {
+                Console.WriteLine("Both equal");
+            }
         }
     }
 }
