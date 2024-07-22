@@ -15,7 +15,7 @@ namespace Demo.Operator_Overloading
         {
             return $"{Real} + {Imag}i";
         }
-        #region Binary Opertors
+        #region Binary Operators
         public static Complex operator +(Complex a, Complex b)
         {
             return new Complex()
@@ -32,7 +32,27 @@ namespace Demo.Operator_Overloading
                 Real = (a?.Real ?? 0) - (b?.Real ?? 0),
                 Imag = (a?.Imag ?? 0) - (b?.Imag ?? 0)
             };
-        } 
+        }
+        #endregion
+
+        #region Unary Operators
+        public static Complex operator ++(Complex complex)
+        {
+            return new Complex()
+            {
+                Real = (complex?.Real ?? 0) + 1,
+                Imag = (complex?.Imag ?? 0)
+            };
+        }
+
+        public static Complex operator --(Complex complex)
+        {
+            return new Complex()
+            {
+                Real = (complex?.Real ?? 0) - 1,
+                Imag = (complex?.Imag ?? 0)
+            };
+        }
         #endregion
     }
 }
